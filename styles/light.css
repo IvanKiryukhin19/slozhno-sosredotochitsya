@@ -20,6 +20,7 @@
   --light-visability: hidden;
   --background-image: url(../images/cover-image-light.png);
   --background-color: #FFF1F7;
+  --shadow-color: #FF8DCB;
 }
 
 @media (prefers-color-scheme: light) {
@@ -35,5 +36,6 @@
   --light-visability: hidden;
   --background-image: url(../images/cover-image-light.png);
   --background-color: #FFF1F7;
+  --shadow-color: #FF8DCB;
   }
 }

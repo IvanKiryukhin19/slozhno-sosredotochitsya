@@ -101,7 +101,7 @@
   font-family: var(--font-family, sans-serif);
   font-weight: bold;
   color: var(--font-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--shadow-color);
   grid-area: grid-phrase;
   line-height: var(--line-height); 
 }
@@ -125,7 +125,7 @@
   padding: var(--padding-page) 0;
   align-items: center;
   justify-content: center;
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
 @media (width >= 768px) {

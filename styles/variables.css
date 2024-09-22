@@ -17,15 +17,16 @@
   --margin-gallery: 40px;
   --padding-last-text: 10px;
 
-  --font-color: #DB00FF;
-  --color-base: #FF0070;
+  --font-color: #FFC2E6;
+  --color-base: #353430;
   --accent-color: #FF0070;
-  --font-header-color: #000028;
-  --font-item-subtitle-color: #000028;
-  --font-item-text-color: #F1B2CE;
-  --font-background-color: #FF0070;
-  --link-effect-color: #FF0070;
-  --light-visability: visible;
-  --background-image: url(../images/cover-image-dark.png);
-  --background-color: #000028;
+  --font-header-color: #353430;
+  --font-item-subtitle-color: #353430;
+  --font-item-text-color: #353430;
+  --font-background-color: #FF8DCB;
+  --shadow-color: #FF8DCB;
+  --link-effect-color: #FF8DCB;
+  --light-visability: hidden;
+  --background-image: url(../images/cover-image-light.png);
+  --background-color: #FFF1F7;
 }
