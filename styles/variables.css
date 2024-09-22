@@ -2,3 +2,26 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --padding-page: clamp(10px, 0.0254 * 100vw + 0.458px, 20px);
+  --font-size: 116px;
+  --line-height: 95.7px;
+  --font-color: #DB00FF;
+  --color-base: #FF0070;
+  --accent-color: #FF0070;
+  --font-header-color: #000028;
+  --font-item-subtitle-color: #000028;
+  --font-item-text-color: #F1B2CE;
+  --font-background-color: #FF0070;
+  --link-effect-color: #FF0070;
+  --font-family: 'IBM Plex mono';
+  --margin-item-subtitle: 10px;
+  --margin: 20px;
+  --margin-text: 20px;
+  --margin-article-top:40px;
+  --margin-article-bottom: 0;
+  --gap-picture: 10px;
+  --margin-correction: -2px;
+  --margin-gallery: 40px;
+  --padding-last-text: 10px;
+}

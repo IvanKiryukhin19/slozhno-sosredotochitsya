@@ -9,4 +9,19 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --font-color: #DB00FF;
+  --color-base: #FF0070;
+  --accent-color: #FF0070;
+  --font-header-color: #000028;
+  --font-item-subtitle-color: #000028;
+  --font-item-text-color: #F1B2CE;
+  --font-background-color: #FF0070;
+  --link-effect-color: #FF0070;
+
+  background-image: url("../images/cover-image-dark.png");
+  
+  .light {
+    visibility: visible;
+  }
 }
+
