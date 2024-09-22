@@ -3,7 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   padding: 0 var(--padding-page);
-  background-image: url("../images/cover-image-dark.png");
+  background-image: var(--background-image);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -277,6 +277,7 @@
   top: var(--padding-page);
   left: calc(100% - 60px);
   margin-block-start: 2px;
+  visibility: var( --light-visability);
 }
 
 .light::before {
