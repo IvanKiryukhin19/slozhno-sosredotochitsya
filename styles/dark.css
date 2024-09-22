@@ -18,5 +18,6 @@
   --font-background-color: #FF0070;
   --link-effect-color: #FF0070;
   --light-visability: visible;
-  --background-image: url("../images/cover-image-dark.png");
+  --background-image: url(../images/cover-image-dark.png);
+  --background-color: #000028;
 }
