@@ -33,7 +33,7 @@
   --font-background-color: #FF8DCB;
   --link-effect-color: #FF8DCB;
   --light-visability: hidden;
-  --background-image: url("../images/cover-image-light.png");
+  --background-image: url(../images/cover-image-light.png);
   --background-color: #FFF1F7;
   }
 }
