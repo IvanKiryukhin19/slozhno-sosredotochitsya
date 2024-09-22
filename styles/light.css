@@ -19,11 +19,6 @@
   --link-effect-color: #FF8DCB;
   --light-visability: hidden;
   --background-image: url("../images/cover-image-light.png");
-
-/*
-  .light {
-    visibility: hidden;
-  }*/
 }
 
 @media (prefers-color-scheme: light) {
