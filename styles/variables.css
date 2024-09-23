@@ -4,18 +4,14 @@
 */
 :root {
   --padding-page: clamp(10px, 0.0254 * 100vw + 0.458px, 20px);
-  --font-size: 116px;
+  --font-size: clamp(116px, 0.0102 * 100vw + 112.18px, 120px);
   --line-height: 95.7px;
   --font-family: 'IBM Plex mono';
-  --margin-item-subtitle: 10px;
-  --margin: 20px;
-  --margin-text: 20px;
-  --margin-article-top:40px;
-  --margin-article-bottom: 0;
-  --gap-picture: 10px;
-  --margin-correction: -2px;
-  --margin-gallery: 40px;
-  --padding-last-text: 10px;
+  --margin-section-top-bottom: 40px;
+  --margin-section-left-right: var(--padding-page);
+  --content-padding: 50px;
+  --content-title-padding: 20px;
+  --gallery-padding: 10px;
 
   --font-color: #FFC2E6;
   --color-base: #353430;

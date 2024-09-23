@@ -2,10 +2,9 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  padding: 0 var(--padding-page);
   background-image: var(--background-image);
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center;
   background-attachment: fixed;
   background-size: cover;
   background-color: var(--background-color);
@@ -14,7 +13,7 @@
 .header {
   position: relative;
   height: 100vh;
-  padding: var(--padding-page) 0;
+  padding: var(--padding-page);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: clamp(163px, 0.2723 * 100vw + 60.901px, 270px) 1fr min-content 1fr;
@@ -27,9 +26,7 @@
 .header__title {
   display: inline-block;
   color: var(--font-header-color, black);
-  background-color: var(--font-background-color, red);
   grid-area: grid-title;
-  
 }
 
 .header__theme-menu {
@@ -52,41 +49,43 @@
   margin: 0;
   padding: 0 14px 3px 11px;
   border: none;
-  /*outline: var(--color-base) solid 1px;*/
   background-color: transparent;
 }
 
-.content__article {
-  padding-block-end: var(--margin-article-bottom);
-  margin-block-start: var(--margin-article-top);
+.main {
+  padding: var(--margin-section-top-bottom) var(--margin-section-left-right);
 }
 
-.content__item-title {
-  color: var(--color-base);
-  margin-block-end: var(--margin-text);
+.content:not(:last-child) {
+  padding-block-end: var(--content-padding);
 }
 
-.content__item-subject {
-  color: var(--font-item-subtitle-color, black);
-  background-color: var(--font-background-color, red);
-  margin-block-end: var(--margin);
-  margin-block-start: var(--margin-correction);
+.content__title {
+  padding-block-end: var(--content-title-padding);
 }
 
-.content__item-subtitle {
-  color: var(--font-item-subtitle-color, black);
-  background-color: var(--font-background-color, red);
-  margin-block-end: var(--margin-item-subtitle);
+.content__title-correction-padding {
+  padding-block-end: calc(var(--content-title-padding) - 2px);
+}
+
+.content__item-article-without-text {
+  padding-block-end: 0;
 }
 
 .content__item-text {
-  color: var(--font-item-text-color, pink);
-  margin-block-end: var(--margin-text);
+  padding-block-start: 10px;
 }
 
-.content__item:last-child .content__item-text {
-  padding-block-end: 10px;
-  margin-block-end: var(--padding-last-text);
+.decorated-title-background {
+  background-color: var(--font-background-color, red);
+}
+
+.content__item:not(:last-child) {
+  padding-block-end: 20px;
+}
+
+.title-gallery {
+  padding-block-end: 0;
 }
 
 .image {
@@ -111,10 +110,10 @@
 }
 
 .gallery {
+  padding-block-start: var(--gallery-padding);
   display: flex;
   flex-direction: column;
   gap: var(--gap-picture);
-  margin-block-end: var(--margin-gallery);
 }
 
 .footer {
@@ -130,14 +129,93 @@
   text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-style: solid solid none none;
+  border-color: var(--color-base);
+  border-width: 1px;
+  top: var(--padding-page);
+  left: calc(100% - 25px - var(--padding-page));
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-style: none none solid solid;
+  border-color: var(--color-base);
+  border-width: 1px;
+  left: var(--padding-page);
+  top: calc(100% - 25px - var(--padding-page));
+}
+
+.light {
+  position: absolute;
+  color: var(--color-base);
+  top: var(--padding-page);
+  left: calc(100% - 60px - var(--padding-page));
+  margin-block-start: 2px;
+  visibility: var( --light-visability);
+}
+
+.light::before {
+  content:'';
+  position: absolute;
+  block-size: 8px;
+  inline-size: 8px;
+  background-color: var(--color-base);
+  border-radius: 50%;
+  top: 7px;
+  left: calc(100% + 14px);
+  box-shadow: 0 0 3px 3px var(--color-base);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: var(--color-base) solid 1px;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--link-effect-color);
+}
+
+.header__theme-menu-button:hover {
+  outline: var(--color-base) solid 1px;
+}
+
+.header__theme-menu-button:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.link:focus-visible {
+  text-decoration: none;
+  outline: var(--font-item-text-color) solid 1px;;
+}
+
+.link:hover::before {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 1px;
+  background-color: var(--font-item-text-color);
+  z-index: -1;
+  inset-block-end: 0;
+}
+
 @media (width >= 768px) {
   :root {
-    --padding-page: 20px;
-    --margin-article-top: 60px;
-    --margin-last-text: 20px;
-    --font-size: 120px;
+    --margin-section-top-bottom: 60px;
+    --content-padding: 80px;
+    --gallery-padding: 20px;
     --line-height: 99px;
-    --margin-gallery: 60px;
+    --font-size: clamp(120px, 0.1445 * 100vw + 9px, 157px);
   }
 
   .header {
@@ -156,32 +234,18 @@
     padding-block-end: clamp(113px, -0.1875 *100vw + 305px, 161px);
   }
 
-  .content:nth-child(2n+1) .content__item-title {
-    margin-block-end: 0;
-  }
-  
-  .content:nth-child(2n+1) .content__article {
+  .content:nth-child(odd):not(:last-child) {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     gap: 20px;
   }
 
-  .content:nth-child(2n+2):not(:last-child) .content__article {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-
-  .content:nth-child(2n+2):not(:last-child) .content__item-title {
+  .content:nth-child(even):not(:last-child) .content__title {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     gap: 20px;
-  }
-
-  .content:last-child .content__item-subtitle {
-    margin-block-end: 20px;
   }
 
   .image {
@@ -234,101 +298,16 @@
     gap: 10px;
   }
 
-  .content:nth-child(2n+1) .content__article {
+  .content:nth-child(odd):not(:last-child) {
     grid-template-columns: calc(100% / 3 - 40px / 3) 2fr;
   }
 
-  .content:nth-child(2n+2):not(:last-child) .content__article {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-
-  .content:nth-child(2n+2) .content-list-subtitle-items {
+  .content:nth-child(even):not(:last-child) .content__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
     grid-auto-rows: auto;
     gap: 20px;
   }
-}
 
-.decorated-zone::before {
-  content: '';
-  position: absolute;
-  block-size: 25px;
-  inline-size: 25px;
-  border-style: solid solid none none;
-  border-color: var(--color-base);
-  border-width: 1px;
-  top: var(--padding-page);
-  left: calc(100% - 25px);
 }
-
-.decorated-zone::after {
-  content: '';
-  position: absolute;
-  block-size: 25px;
-  inline-size: 25px;
-  border-style: none none solid solid;
-  border-color: var(--color-base);
-  border-width: 1px;
-  left: 0;
-  top: calc(100% - 25px - var(--padding-page));
-}
-
-.light {
-  position: absolute;
-  color: var(--color-base);
-  top: var(--padding-page);
-  left: calc(100% - 60px);
-  margin-block-start: 2px;
-  visibility: var( --light-visability);
-}
-
-.light::before {
-  content:'';
-  position: absolute;
-  block-size: 8px;
-  inline-size: 8px;
-  background-color: var(--color-base);
-  border-radius: 50%;
-  top: 7px;
-  left: calc(100% + 14px);
-  box-shadow: 0 0 3px 3px var(--color-base);
-}
-
-.header__theme-menu-button_active {
-  pointer-events: none;
-  outline: var(--color-base) solid 1px;
-}
-
-.link {
-  position: relative;
-  text-decoration: none;
-  text-shadow: 2px 2px 0 var(--link-effect-color);
-}
-
-.header__theme-menu-button:hover {
-  outline: var(--color-base) solid 1px;
-}
-
-.header__theme-menu-button:focus-visible {
-  text-decoration: underline;
-  outline: none;
-}
-
-.link:focus-visible {
-  text-decoration: none;
-  outline: var(--font-item-text-color) solid 1px;;
-}
-
-.link:hover::before {
-  content: '';
-  position: absolute;
-  inline-size: 100%;
-  block-size: 1px;
-  background-color: var(--font-item-text-color);
-  z-index: -1;
-  inset-block-end: 0;
-}
-
