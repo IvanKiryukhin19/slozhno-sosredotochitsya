@@ -22,3 +22,20 @@
   --background-color: #000028;
   --shadow-color: #FF0070;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-color: #DB00FF;
+    --color-base: #FF0070;
+    --accent-color: #FF0070;
+    --font-header-color: #000028;
+    --font-item-subtitle-color: #000028;
+    --font-item-text-color: #F1B2CE;
+    --font-background-color: #FF0070;
+    --link-effect-color: #FF0070;
+    --light-visability: visible;
+    --background-image: url(../images/cover-image-dark.png);
+    --background-color: #000028;
+    --shadow-color: #FF0070;
+  }
+}
