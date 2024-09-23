@@ -23,3 +23,19 @@
   --shadow-color: #FF8DCB;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --font-color: #FFC2E6;
+  --color-base: #353430;
+  --accent-color: #FF0070;
+  --font-header-color: #353430;
+  --font-item-subtitle-color: #353430;
+  --font-item-text-color: #353430;
+  --font-background-color: #FF8DCB;
+  --link-effect-color: #FF8DCB;
+  --light-visability: hidden;
+  --background-image: url(../images/cover-image-light.png);
+  --background-color: #FFF1F7;
+  --shadow-color: #FF8DCB;
+  }
+}
