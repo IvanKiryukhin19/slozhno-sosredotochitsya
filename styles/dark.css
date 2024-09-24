@@ -21,6 +21,10 @@
   --background-image: url(../images/cover-image-dark.png);
   --background-color: #000028;
   --shadow-color: #FF0070;
+  --title-color: #FF0070;
+  --item-article-title: #000028;
+  --color-with-opacity: #FF007066;
+  --font-button-color:#FF0070;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,5 +41,9 @@
     --background-image: url(../images/cover-image-dark.png);
     --background-color: #000028;
     --shadow-color: #FF0070;
+    --title-color: #FF0070;
+    --item-article-title: #000028;
+    --color-with-opacity: #FF007066;
+    --font-button-color:#FF0070;
   }
 }

@@ -21,4 +21,8 @@
   --background-image: url(../images/cover-image-light.png);
   --background-color: #FFF1F7;
   --shadow-color: #FF8DCB;
+  --title-color: #353430;
+  --item-article-title: #353430;
+  --color-with-opacity: #32312D66;
+  --font-button-color:#353430;
 }
